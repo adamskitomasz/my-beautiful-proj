@@ -35,6 +35,7 @@ jobs:
         run: cat Test-Results/TomekTest.txt # this won't work
 
       - name: Debug Change Shell
+        run: echo "You cannot run step without any 'run'"
 
       - name: 
         run: |
