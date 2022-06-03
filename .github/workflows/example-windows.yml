@@ -1,0 +1,16 @@
+---
+name: Shell Commands
+
+on: [push]
+
+jobs: 
+  run-ps-command:
+    runs-on: windows-latest
+    steps: 
+      - name: Write something
+        run: echo "Windows"
+
+      - name: Debug PS
+        run: |
+          Get-Date -Format yyyyMMdd HHmmSS
+
