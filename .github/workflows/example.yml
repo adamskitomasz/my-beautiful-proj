@@ -22,3 +22,9 @@ jobs:
 
       - name: Check other commands from shell
         run: ls -a
+
+      - name: Create file
+        run: |
+          FILE=TomekTest.txt
+          touch $FILE
+          echo "Result of file..." > "Test-Results\"$FILE
