@@ -16,3 +16,9 @@ jobs:
           echo "456"
           node -v
           npm -v
+
+      - name: Debug test
+        run: mkdir "Test-Results"
+
+      - name: Check other commands from shell
+        run: ls -a
