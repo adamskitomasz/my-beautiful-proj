@@ -4,7 +4,7 @@ name: Shell Commands
 on: [push]
 
 jobs: 
-  run-shell0-command:
+  run-shell-command:
     runs-on: ubuntu-18.04
     steps: 
       - name: Write something
@@ -34,9 +34,6 @@ jobs:
       - name: Check file
         run: cat Test-Results/TomekTest.txt # this won't work
 
-  run-shell1-command:
-    runs-on: ubuntu-16.04
-    step:
       - name: Debug Change Shell
 
       - name: 
