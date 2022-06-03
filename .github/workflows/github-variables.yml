@@ -2,12 +2,16 @@
 name: GitHub Variables Actions
 
 on:
-  push:
+  # push:
   pull_request:
-    types:
-      - closed
-      - reopened
-      - assigned
+    # types:
+    #   - closed
+    #   - reopened
+    #   - assigned
+  schedule:
+    - cron: "0/30 9-17 * * MON-FRI"
+
+
 
 jobs: 
   js-run:
@@ -19,9 +23,10 @@ jobs:
           echo $GITHUB_SHA
           echo $GITHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
+          echo $GITHUB_REF
 
-      - name: GitHub Token
-        run: echo "${{ github.token }}"
+      # - name: GitHub Token
+      #   run: echo "${{ github.token }}"
 
       # - name: Clone Github my $GITHUB_REPOSITORY
       #   run: |
