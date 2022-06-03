@@ -1,0 +1,17 @@
+---
+name: JS Actions
+
+on: [push]
+
+jobs: 
+  ai1-run-shell-command:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Simple on
+        id: greet
+        uses: actions/hello-world-javascript-action@v1
+        with: 
+          who-to-greet: Tomek
+
+      - name: Log Greeting
+        run: echo "{{ step.greet.output.time }}"
