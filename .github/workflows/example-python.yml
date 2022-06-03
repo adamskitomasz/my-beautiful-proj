@@ -4,39 +4,12 @@ name: Shell Commands
 on: [push]
 
 jobs: 
-  run-shell-command:
+  run-python:
     runs-on: ubuntu-18.04
     steps: 
       - name: Write something
-        run: echo "test" 
-
-      # - name: multiline script
-      #   run: | 
-      #     echo "123"
-      #     echo "456"
-      #     node -v
-      #     npm -v
-
-      # - name: Debug test
-      #   run: mkdir "Test-Results"
-
-      # - name: Check other commands from shell
-      #   run: ls -a
-
-      # - name: Create file
-      #   run: |
-      #     FILE=TomekTest.txt ; echo $FILE
-      #     echo $FILE
-      #     touch Test-Results/TomekTest.txt
-      #     echo "Result of file..." > Test-Results/TomekTest.txt
-      #     cat Test-Results/TomekTest.txt
-      
-      - name: Check file
-        run: cat Test-Results/TomekTest.txt # this won't work
-
-      - name: Debug Change Shell
-        run: echo "You cannot run step without any 'run'"
-
+        run: python -V
+     
       - name: 
         run: |
           import platform

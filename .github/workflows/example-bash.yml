@@ -30,16 +30,4 @@ jobs:
           touch Test-Results/TomekTest.txt
           echo "Result of file..." > Test-Results/TomekTest.txt
           cat Test-Results/TomekTest.txt
-      
-      # - name: Check file
-      #   run: cat Test-Results/TomekTest.txt # this won't work
-
-      # - name: Debug Change Shell
-      #   run: echo "You cannot run step without any 'run'"
-
-      # - name: 
-      #   run: |
-      #     import platform
-      #     print(platform.processor())
-      #   shell: python
           
