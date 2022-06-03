@@ -4,7 +4,7 @@ name: Shell Commands
 on: [push]
 
 jobs: 
-  run-shell-command:
+  run-shell0-command:
     runs-on: ubuntu-18.04
     steps: 
       - name: Write something
@@ -25,10 +25,24 @@ jobs:
 
       - name: Create file
         run: |
-          FILE=TomekTest.txt
+          FILE=TomekTest.txt ; echo $FILE
+          echo $FILE
           touch Test-Results/TomekTest.txt
           echo "Result of file..." > Test-Results/TomekTest.txt
           cat Test-Results/TomekTest.txt
       
       - name: Check file
         run: cat Test-Results/TomekTest.txt # this won't work
+
+  run-shell1-command:
+    runs-on: ubuntu-16.04
+    step:
+      - name: Debug Change Shell
+
+      - name: 
+        run: |
+          import platform
+          print
+          (platform.processor())
+        shell: python
+          
