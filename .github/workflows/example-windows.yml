@@ -12,5 +12,6 @@ jobs:
 
       - name: Debug PS
         run: |
-          Get-Date -Format yyyyMMdd HHmmSS
+          Get-Date -format "yyyy--MM--dd HH:mm:ss"
+          $a = 1 ; echo $a
 
