@@ -26,9 +26,9 @@ jobs:
       - name: Create file
         run: |
           FILE=TomekTest.txt
-          touch Test-Results/$FILE
-          echo "Result of file..." > Test-Results/$FILE
-          cat Test-Results/$FILE 
+          touch Test-Results/TomekTest.txt
+          echo "Result of file..." > Test-Results/TomekTest.txt
+          cat Test-Results/TomekTest.txt
       
       - name: Check file
-        run: cat Test-Results/$FILE # this won't work
+        run: cat Test-Results/TomekTest.txt # this won't work
