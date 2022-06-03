@@ -1,0 +1,24 @@
+---
+name: GitHub Variables Actions
+
+on: [push]
+
+jobs: 
+  js-run:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Simple Variables
+        run: |
+          pwd
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+
+      - name: GitHub Token
+        run: "${{ github.token }}"
+
+      # - name: Clone Github my $GITHUB_REPOSITORY
+      #   run: |
+      #     git clone git@github:$GITHUB_REPOSITORY
+      #     git checkout $GITHUB_SHA
+
