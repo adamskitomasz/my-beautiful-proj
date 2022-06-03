@@ -15,7 +15,7 @@ jobs:
           echo $GITHUB_WORKSPACE
 
       - name: GitHub Token
-        run: "${{ github.token }}"
+        run: echo "${{ github.token }}"
 
       # - name: Clone Github my $GITHUB_REPOSITORY
       #   run: |
