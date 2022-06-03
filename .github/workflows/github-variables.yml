@@ -1,7 +1,13 @@
 ---
 name: GitHub Variables Actions
 
-on: [push]
+on:
+  push:
+  pull_request:
+    types:
+      - closed
+      - reopened
+      - assigned
 
 jobs: 
   js-run:
