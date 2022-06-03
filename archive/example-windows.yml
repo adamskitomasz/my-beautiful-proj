@@ -1,5 +1,5 @@
 ---
-name: Shell Commands
+name: Powershell Commands
 
 on: [push]
 

@@ -1,5 +1,5 @@
 ---
-name: Shell Commands
+name: Bash Commands
 
 on: [push]
 

@@ -1,5 +1,5 @@
 ---
-name: Shell Commands
+name: Python Commands
 
 on: [push]
 
