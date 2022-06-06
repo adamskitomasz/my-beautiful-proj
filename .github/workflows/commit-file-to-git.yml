@@ -9,10 +9,11 @@ env:
 
 jobs:
   debug_variables: 
-    runs-on: ${{ env.my_fav_ubuntu }}
+    runs-on: ubuntu-20.04
     steps:
     - name: check Variables
       run: |
+        echo ${{ env.my_fav_ubuntu }}
         echo ${{ github.repository }}
         echo ${{ github.workflow }}
         echo ${{ github.sha }}
@@ -23,7 +24,7 @@ jobs:
         echo $GITHUB_REF
 
   create_file:
-    runs-on: ${{ env.my_fav_ubuntu }}
+    runs-on: ubuntu-20.04
     steps:
     - name: Debug
       run: |
@@ -36,7 +37,7 @@ jobs:
         cat test.txt
     
   create_commit:
-    runs-on: ${{ env.my_fav_ubuntu }} 
+    runs-on: ubuntu-20.04
     permissions:
       issues: write 
     steps:
