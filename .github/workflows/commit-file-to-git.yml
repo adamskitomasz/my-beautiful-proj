@@ -1,0 +1,13 @@
+---
+name: Commit-file
+on:
+- push
+
+jobs:
+  create_commit_in_my_repo:
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Debug
+      run: |
+        curl -vvv google.pl
+        
