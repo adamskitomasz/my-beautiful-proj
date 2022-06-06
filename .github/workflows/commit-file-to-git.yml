@@ -2,10 +2,28 @@
 name: Commit-file
 on:
 - push
+env:
+  my_github: tomad4  # $GITHUB_REPOSITORY
+  repo_name: my-beautiful-proj # $GITHUB_WORKSPACE
+  my_fav_ubuntu: ubuntu-20.04 
 
 jobs:
+  debug_variables: 
+    runs-on: ${{ env.my_fav_ubuntu }}
+    steps:
+    - name: check Variables
+      run: |
+        echo ${{ github.repository }}
+        echo ${{ github.workflow }}
+        echo ${{ github.sha }}
+        echo "-----"
+        echo $GITHUB_SHA
+        echo $GITHUB_REPOSITORY
+        echo $GITHUB_WORKSPACE
+        echo $GITHUB_REF
+
   create_file:
-    runs-on: ubuntu-20.04
+    runs-on: ${{ env.my_fav_ubuntu }}
     steps:
     - name: Debug
       run: |
@@ -18,7 +36,7 @@ jobs:
         cat test.txt
     
   create_commit:
-    runs-on: ubuntu-latest 
+    runs-on: ${{ env.my_fav_ubuntu }} 
     permissions:
       issues: write 
     steps:
@@ -33,3 +51,26 @@ jobs:
             "body": "This issue was automatically created by the GitHub Action workflow **${{ github.workflow }}**. \n\n The commit hash was: _${{ github.sha }}_."
             }' \
           --fail
+
+      - name: push file to git repo
+        run: |
+          pwd
+          ls -a
+          git init
+          git remote add origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
+          git config --global user.email ""
+          git config --global user.name ""
+          git fetch
+          git checkout master
+          git branch --set-upstream-to=origin/master
+          git pull
+          ls -a
+          echo $RANDOM >> random.txt
+          echo "${DATE}" >> random.txt
+          git add -A
+          git commit -m"Test file (TA)"
+          git push
+
+
+
+          
